@@ -1,0 +1,93 @@
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  background: #283642;
+}
+
+img {
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  width:70px;
+  border-radius:50%;
+}
+
+.avatar:hover {
+  animation: in 0.5s 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.avatar {
+  position:relative;
+  width: 100px;
+  height: 100px;
+  animation: out 0.5s 1;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.avatar svg {
+  fill: none;
+  stroke: #8a3ab9;
+  stroke-linecap: round;
+  stroke-width: 3;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.avatar:hover svg {
+  animation: stroke-draw 6s ease-out infinite alternate;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes in {
+  0% {
+    border-color: #001f3f;
+    transform: scale(1);
+  }
+  70% {
+    border-color: rgb(74, 54, 255);
+    transform: scale(1.1);
+  }
+  100% {
+    border-color: rgb(54, 255, 104);
+    transform: scale(1.2);
+  }
+}
+
+@keyframes out {
+  0% {
+    border-color: rgb(54, 255, 104);
+    transform: scale(1.2);
+  }
+  70% {
+    border-color: rgb(74, 54, 255);
+    transform: scale(1.1);
+  }
+  100% {
+    border-color: #001f3f;
+    transform: scale(1);
+  }
+}
+
+@keyframes stroke-draw {
+  from {
+    stroke: #8a3ab9;
+    stroke-dasharray: 1;
+  }
+  to {
+    stroke: #cd486b;
+    transform: rotate(180deg);
+    stroke-dasharray: 8;
+  }
+}
