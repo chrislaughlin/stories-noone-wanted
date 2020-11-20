@@ -30,6 +30,7 @@ img {
   animation: out 0.5s 1;
   animation-fill-mode: backwards;
   animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  cursor: pointer;
 }
 
 .avatar svg {
@@ -41,13 +42,42 @@ img {
   stroke-dashoffset: 0;
 }
 .avatar:hover svg {
-  animation: stroke-draw 6s ease-out infinite alternate;
+  animation: stroke-draw 3s ease-out infinite alternate;
 }
 
 #app {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.gif {
+  transform: scale(0);
+  position: fixed;
+  width: 50vw;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+}
+
+.gif.show {
+  animation: grow 1s ease-out  forwards;
+}
+
+.gif .close {
+  position: absolute;
+  right: 0;
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff94;
+  cursor: pointer;
+  top: -30px;
 }
 
 @keyframes in {
@@ -89,5 +119,14 @@ img {
     stroke: #cd486b;
     transform: rotate(180deg);
     stroke-dasharray: 8;
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }
