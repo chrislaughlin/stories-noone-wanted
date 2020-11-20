@@ -18,16 +18,20 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-//Open story 
-document.querySelector('.avatar').addEventListener('click', evt => {
-  document.querySelector('.gif').classList.add('show');
+//Open story
+document.querySelector(".avatar").addEventListener("click", (evt) => {
+  document.querySelector(".gif").classList.add("show");
   setTimeout(() => {
-    document.querySelector('.progress-line-progression').classList.add('progress');  
+    document
+      .querySelector(".progress-line-progression")
+      .classList.add("progress");
   }, 0);
-})
+});
 
-// Close story 
-document.querySelector('.close').addEventListener('click', evt => {
-  document.querySelector('.gif').classList.remove('show');
-})
-
+// Close story
+document.querySelector(".close").addEventListener("click", (evt) => {
+  document.querySelector(".gif").classList.remove("show");
+  document
+    .querySelector(".progress-line-progression")
+    .classList.remove("progress");
+});
