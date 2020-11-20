@@ -10,6 +10,8 @@ document.getElementById("app").innerHTML = `
     </svg>
   </div>
   <div class="gif">
+    <div class="progress-line"></div>
+    <div class="progress-line-progression"></div>
     <div class="close">X</div>
     <iframe src="https://giphy.com/embed/tL3Nkk58oeWEo" width="480" height="219" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
   </div>
@@ -19,6 +21,9 @@ document.getElementById("app").innerHTML = `
 //Open story 
 document.querySelector('.avatar').addEventListener('click', evt => {
   document.querySelector('.gif').classList.add('show');
+  setTimeout(() => {
+    document.querySelector('.progress-line-progression').classList.add('progress');  
+  }, 0);
 })
 
 // Close story 

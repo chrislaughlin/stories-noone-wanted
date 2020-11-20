@@ -80,6 +80,35 @@ img {
   top: -30px;
 }
 
+.progress-line {
+  position: absolute;
+  left: 0;
+  width: 95%;
+  height: 10px;
+  background: #ffffff7d;
+  top: -22px;
+  border-radius: 3px;
+}
+
+.progress-line-progression {
+  position: absolute;
+  left: 0;
+  width: 0%;
+  height: 10px;
+  background: #fff;
+  top: -22px;
+  border-radius: 3px;
+  z-index: 10;
+
+  transition-property: width;
+  transition-duration: 3s;
+  transition-delay: 1s;
+}
+
+.progress-line-progression.progress {
+  width: 95%;
+}
+
 @keyframes in {
   0% {
     border-color: #001f3f;
