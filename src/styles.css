@@ -9,145 +9,103 @@ body {
 }
 
 img {
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%, -50%);
   width:70px;
   border-radius:50%;
+  border: 5px solid #863FBD;
+
+  animation: out 0.5s 1;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
-.avatar:hover {
+img:hover {
   animation: in 0.5s 1;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
-.avatar {
-  position:relative;
-  width: 100px;
-  height: 100px;
-  animation: out 0.5s 1;
-  animation-fill-mode: backwards;
-  animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
-  cursor: pointer;
-}
-
-.avatar svg {
-  fill: none;
-  stroke: #8a3ab9;
-  stroke-linecap: round;
-  stroke-width: 3;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 0;
-}
-.avatar:hover svg {
-  animation: stroke-draw 3s ease-out infinite alternate;
-}
-
-#app {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .gif {
   transform: scale(0);
+  display: none;
   position: fixed;
-  width: 50vw;
   height: 50vh;
   top: 50%;
   left: 50%;
-  width: 500px;
-  height: 200px;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -250px;
+  margin: -100px -100px -100px -250px;
+  padding-top: 30px;
 }
 
 .gif.show {
-  animation: grow 1s ease-out  forwards;
+  display: block;
+  animation: grow 1s ease-out forwards;
 }
 
 .gif .close {
+  color: #ffffff99;
+  font-size: 24px;
+  font-weight: bold;
+  float: right;
   position: absolute;
   right: 0;
-  font-size: 24px;
-  font-weight: 900;
-  color: #ffffff94;
-  cursor: pointer;
-  top: -30px;
+  top: 0px;
 }
 
 .progress-line {
   position: absolute;
   left: 0;
-  width: 95%;
+  top: 8px;
   height: 10px;
-  background: #ffffff7d;
-  top: -22px;
+  width: 96%;
+  background: #ffffff3d;
   border-radius: 3px;
 }
 
-.progress-line-progression {
+.progress-line-progress {
   position: absolute;
   left: 0;
-  width: 0%;
+  top: 8px;
   height: 10px;
+  width: 0%;
   background: #fff;
-  top: -22px;
   border-radius: 3px;
-  z-index: 10;
 
   transition-property: width;
   transition-duration: 3s;
   transition-delay: 1s;
 }
 
-.progress-line-progression.progress {
-  width: 95%;
+.progress-line-progress.growing {
+  width: 96%;
 }
 
 @keyframes in {
-  0% {
-    border-color: #001f3f;
+  0%{
     transform: scale(1);
   }
-  70% {
-    border-color: rgb(74, 54, 255);
+  30% {
     transform: scale(1.1);
   }
-  100% {
-    border-color: rgb(54, 255, 104);
-    transform: scale(1.2);
+  70%{
+    transform: scale(1.3);
+  }
+  100%{
+    transform: scale(1.5);
+    border-color: #ED5354;
   }
 }
 
 @keyframes out {
-  0% {
-    border-color: rgb(54, 255, 104);
-    transform: scale(1.2);
+  0%{
+    transform: scale(1.5);
   }
-  70% {
-    border-color: rgb(74, 54, 255);
+  30% {
+    transform: scale(1.3);
+  }
+  70%{
     transform: scale(1.1);
   }
-  100% {
-    border-color: #001f3f;
+  100%{
     transform: scale(1);
-  }
-}
-
-@keyframes stroke-draw {
-  from {
-    stroke: #8a3ab9;
-    stroke-dasharray: 1;
-  }
-  to {
-    stroke: #cd486b;
-    transform: rotate(180deg);
-    stroke-dasharray: 8;
   }
 }
 
