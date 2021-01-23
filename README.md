@@ -15,4 +15,4 @@ Instagram stories recreated in HTML CSS and JS
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
 
 
-![Screenshot](https://raw.githubusercontent.com/chrislaughlin/voice-search/main/Screenshot%202021-01-23%20at%2010.52.02.png)
+![Screenshot](https://github.com/chrislaughlin/stories-noone-wanted/blob/main/demo.gif?raw=true)
