@@ -1,6 +1,3 @@
-# stories-noone-wanted
-Created with CodeSandbox
-
 # Stoies Noone Wanted
 
 Instagram stories recreated in HTML CSS and JS
